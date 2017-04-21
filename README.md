@@ -1,3 +1,3 @@
 # xuyankun.cn
 
-welcome to my homepage: xuyankun.cn
+Welcome to my homepage:  xuyankun.cn
