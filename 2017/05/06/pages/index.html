@@ -1,0 +1,928 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="github,hexo,github pages,博客搭建,学习笔记,学习," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Abstract：本文介绍如何利用Github pages和Hexo来搭建一个个人的博客主页。Github pages是Github自带的一个开源个人主页的工具，有自己的专属域名，但刚开始页面是空白的，而且需要利用.html来编辑网站。但.html不是每个人都会，从而有了hexo这个快速、简洁且高效的博客框架。本教程适用于Windows系统，其他系统的话原理相同 … (阅读全文↓↓↓)">
+<meta name="keywords" content="github,hexo,github pages,博客搭建,学习笔记,学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用Github pages和Hexo搭建个人博客">
+<meta property="og:url" content="http://xuyankun.com/2017/05/06/pages/index.html">
+<meta property="og:site_name" content="Yankun's Blog">
+<meta property="og:description" content="Abstract：本文介绍如何利用Github pages和Hexo来搭建一个个人的博客主页。Github pages是Github自带的一个开源个人主页的工具，有自己的专属域名，但刚开始页面是空白的，而且需要利用.html来编辑网站。但.html不是每个人都会，从而有了hexo这个快速、简洁且高效的博客框架。本教程适用于Windows系统，其他系统的话原理相同 … (阅读全文↓↓↓)">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/res.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/create.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/sys1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/sys2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/sys3.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/houzhui.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/warn.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/md1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/md2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/next.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/next2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/jiexi.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/shezhi.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/newfile.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/cname.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/cname2.jpg">
+<meta property="og:updated_time" content="2017-05-06T21:31:38.580Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何用Github pages和Hexo搭建个人博客">
+<meta name="twitter:description" content="Abstract：本文介绍如何利用Github pages和Hexo来搭建一个个人的博客主页。Github pages是Github自带的一个开源个人主页的工具，有自己的专属域名，但刚开始页面是空白的，而且需要利用.html来编辑网站。但.html不是每个人都会，从而有了hexo这个快速、简洁且高效的博客框架。本教程适用于Windows系统，其他系统的话原理相同 … (阅读全文↓↓↓)">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/res.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xuyankun.com/2017/05/06/pages/"/>
+
+
+
+
+
+  <title> 如何用Github pages和Hexo搭建个人博客 | Yankun's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yankun's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://xuyankun.com/2017/05/06/pages/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yankun Xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yankun's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何用Github pages和Hexo搭建个人博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T15:19:23+02:00">
+                2017-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/博客搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">博客搭建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>阅读量
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>Abstract：</strong><br>本文介绍如何利用<code>Github pages</code>和<code>Hexo</code>来搭建一个个人的博客主页。<code>Github pages</code>是<code>Github</code>自带的一个开源个人主页的工具，有自己的专属域名，但刚开始页面是空白的，而且需要利用.html来编辑网站。但.html不是每个人都会，从而有了hexo这个快速、简洁且高效的博客框架。本教程适用于Windows系统，其他系统的话原理相同 <strong>…</strong> (阅读全文↓↓↓)</p>
+<a id="more"></a>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="注册Github"><a href="#注册Github" class="headerlink" title="注册Github"></a>注册Github</h2><p>首先你需要一个<code>Github</code>账号，<a href="https://github.com/" target="_blank" rel="external">注册Github</a>。当然，Github pages只是一个衍生物，而Github本身是一个特别强大的东西，是一个代码的开源聚集地，现在几乎所有的开源代码都会放在这个上面，很多的软件也都是通过这里下载。对于我们个人来说，也是有很多的功能可以使用，<code>Repositories</code>意思是一个仓库，里面可以存任何你想存的文件，然后别人就可以看到了。而里面一些其他的功能，例如<code>Branch</code>, <code>pull request</code>这两个强大的东西主要是用在一个团队任务中，个人简单使用的话，用<code>Repositories</code>存自己的东西，<code>Star</code>保存他人的东西，<code>Fork</code>把别人的东西放在自己的仓库里，这三个功能就足够了。</p>
+<h2 id="生成Github-pages"><a href="#生成Github-pages" class="headerlink" title="生成Github pages"></a>生成Github pages</h2><p>首先在自己的<code>Repositories</code>下新建一个仓库，并以 <em>username</em>.github.io命名，其中 <em>username</em> 就是你个Github的用户名，也就是你的Github网址最后的名字。例如我的Github网址是 <a href="https://github.com/xuyankun" target="_blank" rel="external">https://github.com/xuyankun</a> ，那么<code>xuyankun</code>就是我的用户名。 其实原则是可以在 <em>username</em> 中填写任何名字的，用自己的用户名是以防重名，因为这里的 <em>username</em>.github.io 就是你即将生成的<code>Github pages</code>的域名。官方教程中，使用<code>Github</code>的桌面版进行发布的，而且是空白的网页，所以我即将使用<code>git</code>和<code>Hexo</code>工具来帮助我们方便发布网页。  </p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/res.jpg" alt="res">  </p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/create.jpg" alt="create"></p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo安装官方教程</a><br>上面这个是<code>Hexo</code>官方出的一个安装教程，可以自己按照流程安装，下面我来说一些需要注意的事项。</p>
+<h3 id="安装Git和Node-js"><a href="#安装Git和Node-js" class="headerlink" title="安装Git和Node.js"></a>安装Git和Node.js</h3><p>首先我们要安装两个程序<code>Git</code>和<code>Node.js</code>。对于Windows用户来说，我们就都从官方的文件中下载下来安装，先安装 <a href="https://git-scm.com/download/win" target="_blank" rel="external">Git</a> 再安装 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> （你可以通过这里的链接下载，与<code>Hexo</code>教程里给的链接相同）。<code>Node.js</code>这里建议安装6.10的版本。<br>安装过程中，除了安装路径自己选择以外，其余的都建议直接选择默认项安装。两个程序安装完成后，需要都添加到环境变量（安装过程中可能已经添加了，可以自己检查一下，如果没有自行添加）,<br>Win10和Win8系统的话直接用Cortana搜索“环境变量”就好了，Win7和WinXP的话过程如下(适用于所有Windows系统)：<br><code>控制面板</code> -&gt; <code>系统安全</code> -&gt; <code>系统</code> -&gt; <code>点击左侧的高级系统设置</code>   </p>
+<p>我们就会得到如下的图片，点击 <code>环境变量</code> ：  </p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/sys1.jpg" alt="sys1"></p>
+<p>在 <code>系统变量</code> 中找到 <code>Path</code> ：</p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/sys2.jpg" alt="sys2"></p>
+<p>这是我已经添加过的情况，如果没有发现添加进来，就自己通过新建或者编辑添加，要注意的是<code>Git</code>添加的是安装路径中的<code>bin</code>文件，而<code>Node.js</code>则是整个文件。</p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/sys3.jpg" alt="sys3">   </p>
+<h3 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h3><p>上面两个程序安装成功后，我们打开时只需要在任意地方（例如桌面）右键选择 <code>Git Bash Here</code> ， 如果你想从任何的目录下运行git，不用从一开始一步步cd到哪个文件夹，只需要到那个文件下右键选择这个就行了（其实，由于我们已经添加到环境变量，直接在cmd里面操作也是可以的）。<br>打开后，输入以下代码进行<code>Git</code>的初始配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"username"</span></div><div class="line">$ git config --global user.email <span class="string">"your_email@example.com"</span></div></pre></td></tr></table></figure></p>
+<p>里面的<code>username</code>跟之前描述的一样，而 <code>your_email@example.com</code> 指的是你注册<code>Github</code>时用的那个邮箱。<br>配置完成后，可以通过以下代码查看自己的配置信息:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --list</div></pre></td></tr></table></figure></p>
+<h3 id="连接Git和Github"><a href="#连接Git和Github" class="headerlink" title="连接Git和Github"></a>连接Git和Github</h3><p>这一步能是为了我们之后每次<code>git</code>发布的时候都可以直接就发布，不然会导致每次<code>git</code>后都需要填写一遍<code>Github</code>的密码，就会很麻烦。这个过程需要配置 <strong>SSH key</strong> 流程如下：<br>鼠标右键任意地方，选择 <code>Git Bash</code> ， 输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></div></pre></td></tr></table></figure></p>
+<p>遇到提示就一路回车，成功后会在你的用户文件夹目录下<code>C:\Users\Administrator</code>生成一个<code>.ssh</code>文件，打开后会发现文件<code>id_rsa.pub</code>，这就是我们所需要的，如果发现有两个相同的文件<code>id_rsa</code>说明你没有显示后缀扩展名，你需要到文件夹查看里选中“文件扩展名”：  </p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/houzhui.jpg" alt="houzhui">  </p>
+<p>然后右键用文本编辑器打开，用 <em>ctrl + A</em> 全选然后复制。<br>（这里推荐一款很好的文本编辑器<a href="https://notepad-plus-plus.org/download/v7.3.3.html" target="_blank" rel="external">Notepad++</a>）<br>接着:<br>进入Github主页 -&gt; 点击右上角的头像 -&gt; 选择setting -&gt; 点击左侧 <code>SSH and GPG keys</code> -&gt; 在 <code>SSH keys</code> 中点击右测的 <code>New SSH key</code> 创建新的 SSH key -&gt; title随意，key里面粘贴刚才复制的内容 -&gt; 点击 <code>Add SSH key</code> 完成<br>如果遇到什么问题，下面提供官方的教程文档，可以按照流程操作。<br><a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank" rel="external">官方教程</a></p>
+<h3 id="安装Hexo-1"><a href="#安装Hexo-1" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>下面只需要再次右键打开 <code>Git Bash</code> ， 输入以下代码即可安装<code>Hexo</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>如果安装过程中遇到了类似如下的 <em>warn</em> ，是没有关系的，只要没有出现error，就说明安装成功了！</p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/warn.jpg" alt="warn">  </p>
+<h1 id="使用Hexo"><a href="#使用Hexo" class="headerlink" title="使用Hexo"></a>使用Hexo</h1><h2 id="基本Hexo命令"><a href="#基本Hexo命令" class="headerlink" title="基本Hexo命令"></a>基本Hexo命令</h2><p>先介绍一点<code>Hexo</code>里常用的命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ hexo generate <span class="comment">#同hexo g，生成静态文件</span></div><div class="line">$ hexo server   <span class="comment">#同hexo s，启动服务器，用来本地预览</span></div><div class="line">$ hexo deploy   <span class="comment">#同hexo deploy，将本地文件发布到github上</span></div><div class="line">$ hexo new      <span class="comment">#同hexo new，新建一篇文章</span></div><div class="line">$ hexo clean    <span class="comment">#清楚缓存</span></div></pre></td></tr></table></figure></p>
+<h2 id="建立博客"><a href="#建立博客" class="headerlink" title="建立博客"></a>建立博客</h2><p>接下来就可以开始制作我们的博客了，建立一个文件夹，这个文件夹就是我们建立博客的文件夹，例如我建立的是:<code>D:\Hexo</code>。然后在这个文件夹内右键打开 <code>Git Bash</code> ， 输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init <span class="comment">#建立网站所需文件</span></div></pre></td></tr></table></figure></p>
+<p>这样我们的博客就建立好了！接着安装依赖包：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install</div></pre></td></tr></table></figure>
+<p>现在我们只要输入：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+<p>打开浏览器，输入网址<code>http://localhost:4000</code>即可本地查看自己的博客啦！意不意外？惊不惊喜？刺不刺激？注意这里只是本地查看，别人是看不到的。</p>
+<h2 id="配置本地文件到Github"><a href="#配置本地文件到Github" class="headerlink" title="配置本地文件到Github"></a>配置本地文件到Github</h2><p>首先安装一个小插件，不然可能会导致一些deploy的错误，输入以下代码：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>接着用文本编辑器打开<code>D:\Hexo</code>里的<code>_config.yml</code>，到文件底部，可以发现depoly的信息，这是我填的内容，现在<code>Hexo</code>版本在更新，可能会导致你在网上搜的别的填写方法失效，这是我的，建议按照这个格式填写(只需要把我的<code>xuyankun</code>部分填写成你的<code>username</code>即可)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: https://github.com/xuyankun/xuyankun.github.io.git <span class="comment"># xuyankun处替换成自己的用户名</span></div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<h2 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h2><p>接着输入以下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
+<p>你就可以邀请小伙伴到<code>username.github.io</code>网址看你的博客啦！（有时服务器会延迟，需要等上一小会才会有效果）</p>
+<blockquote>
+<p>需要注意的是当我们每次修改内容后，想再次发布时都需要<code>hexo g</code>和<code>hexo d</code>（本地查看用<code>hexo s</code>），建议先<code>hexo clean</code>之后再生成静态文件。</p>
+</blockquote>
+<h1 id="Hexo进阶使用"><a href="#Hexo进阶使用" class="headerlink" title="Hexo进阶使用"></a>Hexo进阶使用</h1><h2 id="配置Hexo基础设置"><a href="#配置Hexo基础设置" class="headerlink" title="配置Hexo基础设置"></a>配置Hexo基础设置</h2><p>我们基本上所有的设置都是在<code>_config.yml</code>完成的，文件里面介绍的也都很明显，自己可以不断尝试，更改，然后生成文件自己查看，自己琢磨一会就都明白了。当然配合官方文档的介绍会更加效率：<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo配置</a>  </p>
+<h2 id="撰写文章"><a href="#撰写文章" class="headerlink" title="撰写文章"></a>撰写文章</h2><p>开通博客当然是为了写文章，不然跟咸鱼有什么分别！我们利用代码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new title</div></pre></td></tr></table></figure></p>
+<p>创建一个新的文章，<code>title</code>处可以换成你任何想要的名字，然后你会在<code>source/_posts</code>里看到以这个<code>title</code>命名的文件，然后用文本编辑器就可以撰写文章了！不过这里的文章格式是按照 <em>Markdown</em> 来的，没有接触过的小伙伴不用担心，随便搜一些语法说明就可以写了，然后遇到任何问题再一个个百度一下就可以了，很简单的，这里就给大家奉上我找到的一个简单 <em>Markdown</em> 语法说明:<a href="https://coding.net/help/doc/project/markdown.html" target="_blank" rel="external">Markdown语法介绍</a>。<br>如果对于Hexo里写文章有任何疑问，依然可以参照官方文档:<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="external">Hexo写作</a>。</p>
+<blockquote>
+<p>给大家提一个小建议，就是在Markdown添加图片一般添加网络图片比较方便，本体图片的路径不仅繁琐而且换了电脑就无法使用，所以我建议大家在自己的<code>Github</code>的<code>Repositories</code>里添加一个仓库专门用来放你的图片，上传成功后（用Github桌面版比较方便，使用方法这里就不介绍了，网页直接传也一样），而图片链接在这里：<br><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/md1.jpg" alt="md1"><br><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/md2.jpg" alt="md2"></p>
+</blockquote>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>Hexo默认的主题是<code>Landscape</code>，如果你喜欢就不用看这个部分了，不过要知道，Hexo里可是提供了很多很多好看的主题：<a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo主题</a>(注意这个链接里的主题，点击图片是预览，点击文字则是进入相对应Github页面从而进行下载)。我现在用的这款<code>NexT</code>就是最热门的一款，因为真的很简约很美观！下面就用<code>NexT</code>为例介绍一些关于主题的使用和设置。<br>首先要下载主题<code>NexT</code>，我们可以直接在<code>D:\Hexo</code>目录下打开<code>Git Bash</code>，输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next.git themes/next</div><div class="line"><span class="comment"># 意思是通过git clone进行下载，然后把文件下载到目录下的themes文件夹里，命名为next</span></div></pre></td></tr></table></figure></p>
+<p>或者我们可以进入<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT下载页面</a>进行手动下载，点击右侧绿色的<code>Clone or download</code>，选择<code>Download ZIP</code></p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/next.jpg" alt="next">  </p>
+<p>压缩包下载好后解压到目录文件的themes文件夹里，同样更名为next.  </p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/next2.jpg" alt="next2">  </p>
+<p>每个主题的下载方案都是相似的，但设置方法并不同，要根据各自的文档进行操作，如果你并不想使用<code>NexT</code>主题可以直接看下一个大章节。<br>主题设置就参考：<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">NexT使用文档</a>,使用文档中的<code>开始使用</code>,<code>主题配置</code>,<code>第三方配置</code>都非常有用，仔细阅读修改相应内容，就可以让主页变得更加美观！ 下面我简单介绍一下几款好用的第三方插件的设置。</p>
+<h2 id="第三方插件设置"><a href="#第三方插件设置" class="headerlink" title="第三方插件设置"></a>第三方插件设置</h2><p>第三方设置里，我们主要是希望拥有评论系统和访客的统计，如果你们去百度相关内容，会发现介绍得非常麻烦，因为那是以前，现在Hexo把这些功能都集成在主题内了，我们只需要到相关的第三方网站里注册，把相关的id输入进<code>主题配置文件</code>即可，这里的<code>主题配置文件</code>指的是<code>themes\_config.yml</code>文件。<br>评论系统的话我建议使用<code>Disqus</code>，不过这个评论系统是只支持国外社交软件登陆的，国内的话之前可以选择<code>多说</code>和<code>友言</code>，可多说即将关闭了，而友言我最近发现用不了，所以用了官方文档里介绍的另一款棒子产的评论系统:<code>来必力</code>,注册使用非常简单。Disqus的注册使用也很方便，如果有些不明白的可以参考这篇文章：<a href="http://www.jianshu.com/p/c4f65ebe23ad" target="_blank" rel="external">为 Hexo 博客加入 Disqus 评论</a>,里面的最后一步 <strong>配置 Hexo</strong> 里只需要完成第一步输入<code>shortname</code>即可。<br>而统计功能我推荐使用不蒜子，都不用去注册，直接到配置文件里打开就行了。<br>具体的使用参考：<a href="http://theme-next.iissnan.com/third-party-services.html" target="_blank" rel="external">Hexo第三方服务集成</a></p>
+<h1 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h1><p>有了自己的博客和专属域名，但你告诉别人你的主页时网址还是要添加<code>.github.io</code>的后缀，还是会让小伙伴不容易记住，所以一个个性域名就是必备的了！<br>首先去<a href="https://wanwang.aliyun.com/domain/" target="_blank" rel="external">万网域名</a>去搜索一个自己喜欢的域名，然后 <strong>买下来</strong>，比如我买的域名就是<code>xuyankun.cn</code>。<br>购买成功后，点击右上角的<code>控制台</code>，然后从左侧依次进入：<code>域名与万网（万网）</code> -&gt; <code>域名</code> 。 于是能看到自己刚刚购买的域名，在域名的右侧点击<code>解析</code>：  </p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/jiexi.jpg" alt="jiexi"></p>
+<p>然后通过添加解析进行设置:  </p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/shezhi.jpg" alt="shezhi">  </p>
+<p>请务必按照我设置的格式来，当然，要把<code>xuyankun</code>部分填写成你自己的用户名。其中<code>CNAME</code>那一行设置的意思是不仅可以让你输入<code>xuyankun.cn</code>可以进入博客，而且可以通过<code>www.xuyankun.cn</code>进入，不然加了<code>www.</code>是进不去的，想想看，你告诉别人你的域名，结果人家下意识加了<code>www.</code>却进不去，多尴尬呀！<br>不要以为到此就结束了，还有最关键一部，是要在之前<code>Github</code>里<code>Repositories</code>下的<code>username.github.io</code>里面添加一个<code>CNAME</code>文件。添加过程如下：<br>点击<code>Create new file</code>:</p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/newfile.jpg" alt="newfile">  </p>
+<p>接着输入：  </p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/cname.jpg" alt="cname">  </p>
+<p>最后点击最下面的<code>Commit new file</code>就完成了！<br>可惜这并没有全部结束，唉，别害怕，这里真的是最后一步了！问题在于当你下一次利用<code>hexo g</code>和<code>hexo g</code>发布时，再到自己的<code>Repositories</code>里看就会发现<code>CNAME</code>文件就没有了，所以我们要到<code>Hexo</code>的文件夹下，到<code>source</code>里创建一个<code>CNAME</code>文件，还是跟之前一样，文件名不要后缀（提示文件可能不可用依然点是），内容也只是<code>www.xuyankun.cn</code>即可：  </p>
+<p><img src="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/pages/cname2.jpg" alt="cname2">  </p>
+<p>现在每次再使用<code>hexo clean</code>,<code>hexo g</code>,<code>hexo d</code>等命令进行发布后，<code>CNAME</code>文件就同时被发布上去了！</p>
+<blockquote>
+<p>需要注意的是，.cn,.com的域名需要实名认证后才能生效，而且解析成功后，并不是网站立刻就生效了，需要等一段时间，不用着急。</p>
+</blockquote>
+<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>经过漫长的摸索，想必你应该学会如何从头建立一个这样看起来非常酷炫的博客了吧，如何有任何的疑问可以在下面留言，当然自己去google、百度慢慢摸索的话，乐趣会更大~<br>这是第一次写这样的稍微技术一点的文章，是分享也是自己的一种学习记录，这篇内容写的算是非常详细，目的是希望转告给一些非技术类的小伙伴们也能自己完成制作，感受一下自己实践的乐趣。</p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="http://opiece.me/2015/04/09/hexo-guide/" target="_blank" rel="external">使用Hexo搭建个人博客(基于hexo3.0)</a><br><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" target="_blank" rel="external">GitHub Pages + Hexo搭建博客</a><br><a href="http://www.cnblogs.com/jarson-7426/p/5430757.html" target="_blank" rel="external">使用hexo搭建属于自己的博客</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/github-pages/" rel="tag"># github pages</a>
+          
+            <a href="/tags/博客搭建/" rel="tag"># 博客搭建</a>
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/26/study-thinking/" rel="prev" title="由group引发的一些想法">
+                由group引发的一些想法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODUwMy81MDc0"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/photo.jpg"
+               alt="Yankun Xu" />
+          <p class="site-author-name" itemprop="name">Yankun Xu</p>
+           
+              <p class="site-description motion-element" itemprop="description">Master student in Biomedical Engineering, Chalerms University of Technology, Sweden</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xuyankun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/yankun94" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/xuyankun" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-quora"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xuyankun" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://sighttp.qq.com/msgrd?v=1&uin=407593481" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:yankunxu@outlook.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-mail-forward"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册Github"><span class="nav-number">1.1.</span> <span class="nav-text">注册Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成Github-pages"><span class="nav-number">1.2.</span> <span class="nav-text">生成Github pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.3.</span> <span class="nav-text">安装Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git和Node-js"><span class="nav-number">1.3.1.</span> <span class="nav-text">安装Git和Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Git"><span class="nav-number">1.3.2.</span> <span class="nav-text">配置Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接Git和Github"><span class="nav-number">1.3.3.</span> <span class="nav-text">连接Git和Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo-1"><span class="nav-number">1.3.4.</span> <span class="nav-text">安装Hexo</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Hexo"><span class="nav-number">2.</span> <span class="nav-text">使用Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本Hexo命令"><span class="nav-number">2.1.</span> <span class="nav-text">基本Hexo命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立博客"><span class="nav-number">2.2.</span> <span class="nav-text">建立博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置本地文件到Github"><span class="nav-number">2.3.</span> <span class="nav-text">配置本地文件到Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布博客"><span class="nav-number">2.4.</span> <span class="nav-text">发布博客</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo进阶使用"><span class="nav-number">3.</span> <span class="nav-text">Hexo进阶使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Hexo基础设置"><span class="nav-number">3.1.</span> <span class="nav-text">配置Hexo基础设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撰写文章"><span class="nav-number">3.2.</span> <span class="nav-text">撰写文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更换主题"><span class="nav-number">3.3.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三方插件设置"><span class="nav-number">3.4.</span> <span class="nav-text">第三方插件设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定个人域名"><span class="nav-number">4.</span> <span class="nav-text">绑定个人域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结尾"><span class="nav-number">5.</span> <span class="nav-text">结尾</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文章"><span class="nav-number">6.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yankun Xu</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      访问量
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
