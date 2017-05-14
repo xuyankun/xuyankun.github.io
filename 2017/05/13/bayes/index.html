@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="机器学习,MCMC,pymc,sklearn,学习笔记,贝叶斯公式,朴素贝叶斯," />
+  <meta name="keywords" content="机器学习,贝叶斯公式,朴素贝叶斯,MCMC,pymc,sklearn,学习笔记," />
 
 
 
@@ -91,7 +91,7 @@
 
 
 <meta name="description" content="Abstract：最近课业内的任务不是很多，又邻近暑假了，就在网上搜了一些有关于机器学习和深度学习的课程进行学习。网上的资料非常繁多，很难甄别，我也是货比三家进行学习。这是这个系列的第一个笔记，是关于贝叶斯和MCMC一些数学原理的讲解和代码的实现，希望能够深入浅出，叙述的容易让人理解。…(阅读全文↓↓↓)">
-<meta name="keywords" content="机器学习,MCMC,pymc,sklearn,学习笔记,贝叶斯公式,朴素贝叶斯">
+<meta name="keywords" content="机器学习,贝叶斯公式,朴素贝叶斯,MCMC,pymc,sklearn,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习(一) —— 浅谈贝叶斯和MCMC">
 <meta property="og:url" content="http://xuyankun.com/2017/05/13/bayes/index.html">
@@ -99,7 +99,7 @@
 <meta property="og:description" content="Abstract：最近课业内的任务不是很多，又邻近暑假了，就在网上搜了一些有关于机器学习和深度学习的课程进行学习。网上的资料非常繁多，很难甄别，我也是货比三家进行学习。这是这个系列的第一个笔记，是关于贝叶斯和MCMC一些数学原理的讲解和代码的实现，希望能够深入浅出，叙述的容易让人理解。…(阅读全文↓↓↓)">
 <meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/bayes/pri1.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/xuyankun/images-for-github.io/master/bayes/pri2.jpg">
-<meta property="og:updated_time" content="2017-05-14T20:19:45.381Z">
+<meta property="og:updated_time" content="2017-05-14T21:28:32.412Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习(一) —— 浅谈贝叶斯和MCMC">
 <meta name="twitter:description" content="Abstract：最近课业内的任务不是很多，又邻近暑假了，就在网上搜了一些有关于机器学习和深度学习的课程进行学习。网上的资料非常繁多，很难甄别，我也是货比三家进行学习。这是这个系列的第一个笔记，是关于贝叶斯和MCMC一些数学原理的讲解和代码的实现，希望能够深入浅出，叙述的容易让人理解。…(阅读全文↓↓↓)">
@@ -407,7 +407,7 @@
 <p>$$\pi(\theta) = 1, \theta \in (0,1)$$  </p>
 <p>那现在根据贝叶斯公式求后验概率分布：  </p>
 <p>$$\pi(\theta|x) = \frac{\theta^x(1-\theta)^{n-x}}{\int_0^1\theta^x(1-\theta)^{n-x}d\theta}$$  </p>
-<p>我们可以结果为:  </p>
+<p>我们得到结果为:  </p>
 <p>$$\pi(\theta|x) = \frac{\Gamma(n+2)}{\Gamma(x+1)\Gamma(n-x+1)}\theta^{(x+1)-1}(1-\theta)^{(n-x+1)-1}$$  </p>
 <p>这么一大串是什么呢？其实就是大名鼎鼎的贝塔分布(Beta distribution)。 简写就是 $Be(x+1,n-x+1)$。 比如我掷了10次(n=10)，5次正(x=5),5次反，那么结果就是 $Be(6,6)$, 这个分布的均值就是0.5( $\frac{6}{6+6}$ )，很符合我们想要的结果。  </p>
 <p>现在可以说明，我们把主观揣测的先验概率定为均匀分布是合理的，因为我们在对一件事物没有了解的时候，先认为每种可能性都一样是非常说得通的。有人会认为，既然无信息先验是说得通的，而且贝叶斯公式会根据我们的观测值不断更新后验概率，那是不是我们随便给一个先验概率都可以呢？当然……不行！！这个先验概率是不能瞎猜的，是需要根据一些前人的经验和常识来判断的。比如我随便猜先验为一个分段函数：  </p>
@@ -506,6 +506,10 @@ print(clf.predict([[<span class="number">-1</span>, <span class="number">0</span
           
             <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
           
+            <a href="/tags/贝叶斯公式/" rel="tag"># 贝叶斯公式</a>
+          
+            <a href="/tags/朴素贝叶斯/" rel="tag"># 朴素贝叶斯</a>
+          
             <a href="/tags/MCMC/" rel="tag"># MCMC</a>
           
             <a href="/tags/pymc/" rel="tag"># pymc</a>
@@ -513,10 +517,6 @@ print(clf.predict([[<span class="number">-1</span>, <span class="number">0</span
             <a href="/tags/sklearn/" rel="tag"># sklearn</a>
           
             <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
-          
-            <a href="/tags/贝叶斯公式/" rel="tag"># 贝叶斯公式</a>
-          
-            <a href="/tags/朴素贝叶斯/" rel="tag"># 朴素贝叶斯</a>
           
         </div>
       
@@ -622,7 +622,7 @@ print(clf.predict([[<span class="number">-1</span>, <span class="number">0</span
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -633,7 +633,7 @@ print(clf.predict([[<span class="number">-1</span>, <span class="number">0</span
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
